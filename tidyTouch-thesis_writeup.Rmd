@@ -32,7 +32,9 @@ abstract: |
 keywords          : ""
 wordcount         : ""
 
-bibliography      : ["r-references.bib"]
+bibliography      : 
+  - ["r-references.bib"]
+  - ["add_refs.bib"]
 
 floatsintext      : no
 figsintext        : yes
@@ -53,6 +55,14 @@ library("papaja")
 library("ggplot2")
 library("dplyr")
 library("shiny")
+library("shinymeta")
+library("shinythemes")
+library("readr")
+library("readxl")
+library("tidyr")
+library("datasets")
+library("haven")
+library("reactable")
 ```
 
 ```{r analysis-preferences}
@@ -61,8 +71,14 @@ set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
+# Introduction
+intro to FOSS, R, data science education, 
+* Data Visualization
 
 
+
+
+# -------------------------Break
 # Methods
 We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
 
@@ -73,18 +89,23 @@ We report how we determined our sample size, all data exclusions (if any), all m
 ## Procedure
 
 ## Data analysis
-We used `r cite_r("r-references.bib")` for all our analyses.
-
 
 # Results
 
 # Discussion
 
+## R Packages and Session Info
+To recognize those that contribute to R, tools used by members of the R community, and a continually developing field of data science, the software used in creating the tidyTouch app is listed: `r cite_r("r-references.bib")`. 
+The session info for this project in its current state - containing the R version used for development and additional loaded packages - is listed below.
+```{r echo=FALSE}
+sessionInfo()
+```
+
 
 \newpage
 
 # References
-```{r create_r-references}
+```{r create_r-references, message=FALSE, warning=FALSE}
 r_refs(file = "r-references.bib")
 ```
 
