@@ -63,6 +63,8 @@ library("tidyr")
 library("datasets")
 library("haven")
 library("reactable")
+library("rmarkdown")
+library("cowplot")
 ```
 
 ```{r analysis-preferences}
@@ -72,10 +74,14 @@ knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
 ```
 
 # Introduction
-intro to FOSS, R, data science education, 
+intro to FOSS, R, data science education,  
+Technology is an absolute necessity in professional and academic spaces, where engineers, researchers, programmers, and more utilize an ever-growing collection of digital tools for organizing and analyzing the information vital to their work. Free and open-source software (FOSS) provides opportunities for unconditional access to useful programs and their source code for the sake of modification, improvement, and further sharing [@osd]. In cases where software is used for statistical analysis, many find R, a programming language for statistical analyses, to be a universally applicable tool to which many dedicated maintainers and community members contribute [@R-base]. While accessibility and extensive documentation make R available to individuals with limited knowledge or experience with programming, it is a more technically advanced tool, where a user writes code to read data, perform analyses, and create reports. This barrier gives reason to consider software options that may have limited capability but provide a more intuitive interface. 
+
+Combinations of spreadsheet editing programs like Microsoft Excel [@excel] and statistical analysis software like Minitab [@minitab] and IBM SPSS [@spss] allow less experienced analysts, like students, to visualize the possible structures and operations available for use with their data. These are typically marketed with intentions of the majority of users taking advantage of the graphical user interfaces (GUI), which are designed to give a point-and-click interaction method that engages the underlying code. These have the disadvantages of limited automation and accessibility, where users must manually perform steps of their analyses, often multiple times, on systems granted permission through paid subscriptions for software usage **citation needed?**. 
+
+The R community and immensely popular integrated development environment (IDE), RStudio, encourage the same transparency and information-sharing reflected in the mentality of FOSS distribution [@rstudio]. Analyses in R can be performed in the console, where commands are given in the R language to be interpreted by the system. These analyses can just as easily be written in the form of a script that can be run as a combination of all operations intentionally recorded. Providing a powerful set of methods with infinite complexity, R programming is useful for anyone that works with data. As the practice of using large amounts of data to inform processes in various fields becomes more common, education has and will continue to experience significant impacts [@bigdata1]. This can be observed on multiple fronts
+
 * Data Visualization
-
-
 
 
 # -------------------------Break
@@ -96,7 +102,8 @@ We report how we determined our sample size, all data exclusions (if any), all m
 
 ## R Packages and Session Info
 To recognize those that contribute to R, tools used by members of the R community, and a continually developing field of data science, the software used in creating the tidyTouch app is listed: `r cite_r("r-references.bib")`. 
-The session info for this project in its current state - containing the R version used for development and additional loaded packages - is listed below.
+
+The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
 ```{r echo=FALSE}
 sessionInfo()
 ```
@@ -107,6 +114,8 @@ sessionInfo()
 # References
 ```{r create_r-references, message=FALSE, warning=FALSE}
 r_refs(file = "r-references.bib")
+#`r system(kpsewhich r-references.bib)`
+#`r system(kpsewhich add_refs.bib)`
 ```
 
 \begingroup

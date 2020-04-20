@@ -136,8 +136,18 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-intro to FOSS, R, data science education,
-* Data Visualization
+intro to FOSS, R, data science education,\\
+Technology is an absolute necessity in professional and academic spaces, where engineers, researchers, programmers, and more utilize an ever-growing collection of digital tools for organizing and analyzing the information vital to their work. Free and open-source software (FOSS) provides opportunities for unconditional access to useful programs and their source code for the sake of modification, improvement, and further sharing (Open Source Initiative, 2020). In cases where software is used for statistical analysis, many find R, a programming language for statistical analyses, to be a universally applicable tool to which many dedicated maintainers and community members contribute (R Core Team, 2020). While accessibility and extensive documentation make R available to individuals with limited knowledge or experience with programming, it is a more technically advanced tool, where a user writes code to read data, perform analyses, and create reports. This barrier gives reason to consider software options that may have limited capability but provide a more intuitive interface.
+
+Combinations of spreadsheet editing programs like Microsoft Excel (Microsoft, 2019) and statistical analysis software like Minitab (Minitab, 2020) and IBM SPSS (IBM, 2017) allow less experienced analysts, like students, to visualize the possible structures and operations available for use with their data. These are typically marketed with intentions of the majority of users taking advantage of the graphical user interfaces (GUI), which are designed to give a point-and-click interaction method that engages the underlying code. These have the disadvantages of limited automation and accessibility, where users must manually perform steps of their analyses, often multiple times, on systems granted permission through paid subscriptions for software usage \textbf{citation needed?}.
+
+The R community and immensely popular integrated development environment (IDE), RStudio, encourage the same transparency and information-sharing reflected in the mentality of FOSS distribution (RStudio Team, 2020). Analyses in R can be performed in the console, where commands are given in the R language to be interpreted by the system. These analyses can just as easily be written in the form of a script that can be run as a combination of all operations intentionally recorded. Providing a powerful set of methods with infinite complexity, R programming is useful for anyone that works with data. As the practice of using large amounts of data to inform processes in various fields becomes more common, education has and will continue to experience significant impacts (Piccianio, 2012). This can be observed on multiple fronts
+
+\begin{itemize}
+\tightlist
+\item
+  Data Visualization
+\end{itemize}
 
 \hypertarget{break}{%
 \section{-------------------------Break}\label{break}}
@@ -169,7 +179,8 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \subsection{R Packages and Session Info}\label{r-packages-and-session-info}}
 
 To recognize those that contribute to R, tools used by members of the R community, and a continually developing field of data science, the software used in creating the tidyTouch app is listed: R (Version 3.6.3; R Core Team, 2020) and the R-packages \emph{dplyr} (Version 0.8.5; Wickham et al., 2020), \emph{ggplot2} (Version 3.2.1; Wickham, 2016), \emph{haven} (Version 2.1.1; Wickham \& Miller, 2019), \emph{papaja} (Version 0.1.0.9942; Aust \& Barth, 2020), \emph{reactable} (Version 0.1.0; Lin, 2019), \emph{readr} (Version 1.3.1; Wickham, Hester, \& Francois, 2018), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{shiny} (Version 1.4.0.9000; Chang, Cheng, Allaire, Xie, \& McPherson, 2019; Chang, 2018; Sievert, 2019), \emph{shinymeta} (Version 0.2.0; Sievert, 2019), \emph{shinythemes} (Version 1.1.2; Chang, 2018), and \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020).
-The session info for this project in its current state - containing the R version used for development and additional loaded packages - is listed below.
+
+The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is listed below.
 
 \begin{verbatim}
 ## R version 3.6.3 (2020-02-29)
@@ -192,9 +203,10 @@ The session info for this project in its current state - containing the R versio
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-##  [1] reactable_0.1.0   haven_2.1.1       tidyr_1.0.2       readxl_1.3.1     
-##  [5] readr_1.3.1       shinythemes_1.1.2 shinymeta_0.2.0   shiny_1.4.0.9000 
-##  [9] dplyr_0.8.5       ggplot2_3.2.1     papaja_0.1.0.9942
+##  [1] cowplot_1.0.0     rmarkdown_2.1     reactable_0.1.0   haven_2.1.1      
+##  [5] tidyr_1.0.2       readxl_1.3.1      readr_1.3.1       shinythemes_1.1.2
+##  [9] shinymeta_0.2.0   shiny_1.4.0.9000  dplyr_0.8.5       ggplot2_3.2.1    
+## [13] papaja_0.1.0.9942
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] styler_1.2.0      tidyselect_1.0.0  xfun_0.13         purrr_0.3.4      
@@ -208,8 +220,7 @@ The session info for this project in its current state - containing the R versio
 ## [33] hms_0.5.1         digest_0.6.25     stringi_1.4.6     bookdown_0.18    
 ## [37] grid_3.6.3        cli_2.0.2         tools_3.6.3       magrittr_1.5     
 ## [41] lazyeval_0.2.2    tibble_3.0.0      crayon_1.3.4      pkgconfig_2.0.3  
-## [45] ellipsis_0.3.0    assertthat_0.2.1  rmarkdown_2.1     R6_2.4.1         
-## [49] compiler_3.6.3
+## [45] ellipsis_0.3.0    assertthat_0.2.1  R6_2.4.1          compiler_3.6.3
 \end{verbatim}
 
 \newpage
@@ -231,11 +242,29 @@ Chang, W. (2018). \emph{Shinythemes: Themes for shiny}. Retrieved from \url{http
 \leavevmode\hypertarget{ref-R-shiny}{}%
 Chang, W., Cheng, J., Allaire, J., Xie, Y., \& McPherson, J. (2019). \emph{Shiny: Web application framework for r}. Retrieved from \url{http://shiny.rstudio.com}
 
+\leavevmode\hypertarget{ref-spss}{}%
+IBM. (2017). SPSS, version 25.0. Retrieved from \url{https://www.ibm.com/analytics/spss-statistics-software}
+
 \leavevmode\hypertarget{ref-R-reactable}{}%
 Lin, G. (2019). \emph{Reactable: Interactive data tables based on 'react table'}. Retrieved from \url{https://CRAN.R-project.org/package=reactable}
 
+\leavevmode\hypertarget{ref-excel}{}%
+Microsoft. (2019). Microsoft excel, version 16.0.12819.37950. Retrieved from \url{https://products.office.com/en-us/excel}
+
+\leavevmode\hypertarget{ref-minitab}{}%
+Minitab. (2020). Minitab statistical software, version 19.2020.1. Retrieved from \url{http://www.minitab.com/en-us/products/minitab/}
+
+\leavevmode\hypertarget{ref-osd}{}%
+Open Source Initiative. (2020). OSI: Open source definition. Retrieved from \url{https://opensource.org/docs/osd}
+
+\leavevmode\hypertarget{ref-bigdata1}{}%
+Piccianio, A. G. (2012). The evolution of big data and learning analytics in american higher education. \emph{Journal of Asynchronous Learning Networks}, \emph{16}(3), 9--20.
+
 \leavevmode\hypertarget{ref-R-base}{}%
 R Core Team. (2020). \emph{R: A language and environment for statistical computing}. Vienna, Austria: R Foundation for Statistical Computing. Retrieved from \url{https://www.R-project.org/}
+
+\leavevmode\hypertarget{ref-rstudio}{}%
+RStudio Team. (2020). \emph{RStudio: Integrated development environment for r}. Boston, MA: RStudio, Inc. Retrieved from \url{http://www.rstudio.com/}
 
 \leavevmode\hypertarget{ref-R-shinymeta}{}%
 Sievert, C. (2019). \emph{Shinymeta: Record and expose shiny app logic using metaprogramming}.
