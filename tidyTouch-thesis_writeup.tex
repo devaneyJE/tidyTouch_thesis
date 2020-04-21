@@ -136,18 +136,14 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-intro to FOSS, R, data science education,\\
-Technology is an absolute necessity in professional and academic spaces, where engineers, researchers, programmers, and more utilize an ever-growing collection of digital tools for organizing and analyzing the information vital to their work. Free and open-source software (FOSS) provides opportunities for unconditional access to useful programs and their source code for the sake of modification, improvement, and further sharing (Open Source Initiative, 2020). In cases where software is used for statistical analysis, many find R, a programming language for statistical analyses, to be a universally applicable tool to which many dedicated maintainers and community members contribute (R Core Team, 2020). While accessibility and extensive documentation make R available to individuals with limited knowledge or experience with programming, it is a more technically advanced tool, where a user writes code to read data, perform analyses, and create reports. This barrier gives reason to consider software options that may have limited capability but provide a more intuitive interface.
+Technology is an absolute necessity in professional and academic spaces, where engineers, researchers, programmers, and more utilize an ever-growing collection of digital tools for organizing and analyzing the information vital to their work. Free and open-source software (FOSS) provides opportunities for unconditional access to useful programs and their source code for the sake of modification, improvement, and further sharing (Open Source Initiative, 2020). In cases where software is used for statistical analysis, many find R, a programming language for statistical analyses, to be a universally applicable tool to which many dedicated maintainers and community members contribute (R Core Team, 2020). While accessibility and extensive documentation make R available to individuals with limited knowledge or experience with programming, it is a more technically advanced tool, where a user writes code to read data, perform analyses, and create reports. This barrier gives reason to consider software options that may have limited capability but provide a more intuitive interface.\\
+Combinations of spreadsheet editing programs like Microsoft Excel (Microsoft, 2019) and statistical analysis software like Minitab (Minitab, 2020) and IBM SPSS (IBM, 2017) allow less experienced analysts, like students, to visualize the possible structures and operations available for use with their data. These are typically marketed with intentions of the majority of users taking advantage of the graphical user interfaces (GUI), which are designed to give a point-and-click interaction method that engages the underlying code. These have the disadvantages of limited automation and accessibility, where users must manually perform steps of their analyses, often multiple times, on systems granted permission through paid subscriptions for software usage \textbf{citation needed?}.\\
+The R community and immensely popular integrated development environment (IDE), RStudio, encourage the same transparency and information-sharing reflected in the mentality of FOSS distribution (RStudio Team, 2020). Analyses in R can be performed in the console, where commands are given in the R language to be interpreted by the system. These analyses can just as easily be written in the form of a script that can be run as a combination of all operations intentionally recorded. Providing a powerful set of methods with infinite complexity, R programming is useful for anyone that works with data. As the practice of using large amounts of data to inform processes in various fields becomes more common through the expansion of data science as a field, education has and will continue to experience significant impacts (Piccianio, 2012). This can be observed on multiple fronts, where data science practices can be utilized by educational institutions in operation, as well as be implemented more as instructional content (Williamson, 2017).\\
+Data science education has the potential to bring those that would otherwise use proprietary, GUI-based programs, like those previously mentioned, the small amount of technical training required to begin developing proficiency with tools like R. The language and its additional packages, supplemental files that allow expanded capabilities defined by their authors \textbf{citation needed?}, have extensive documentation that can be easily viewed within the RStudio IDE (RStudio Team, 2020); however, these are written as technical manuals that read in the format of R. The need to assist new students of R in gaining a literacy level in which they can solve problems on their own has motivated projects like the development of RStudio's Primers, online tutorials that teach basic example scenarios to utilize the RStudio suite of packages known as the \texttt{tidyverse} (RStudio Team, 2020; Wickham, 2017). These kinds of resources for data science education are crucial for training new academics and professionals as they work to embrace the ever-growing importance of data.
 
-Combinations of spreadsheet editing programs like Microsoft Excel (Microsoft, 2019) and statistical analysis software like Minitab (Minitab, 2020) and IBM SPSS (IBM, 2017) allow less experienced analysts, like students, to visualize the possible structures and operations available for use with their data. These are typically marketed with intentions of the majority of users taking advantage of the graphical user interfaces (GUI), which are designed to give a point-and-click interaction method that engages the underlying code. These have the disadvantages of limited automation and accessibility, where users must manually perform steps of their analyses, often multiple times, on systems granted permission through paid subscriptions for software usage \textbf{citation needed?}.
-
-The R community and immensely popular integrated development environment (IDE), RStudio, encourage the same transparency and information-sharing reflected in the mentality of FOSS distribution (RStudio Team, 2020). Analyses in R can be performed in the console, where commands are given in the R language to be interpreted by the system. These analyses can just as easily be written in the form of a script that can be run as a combination of all operations intentionally recorded. Providing a powerful set of methods with infinite complexity, R programming is useful for anyone that works with data. As the practice of using large amounts of data to inform processes in various fields becomes more common, education has and will continue to experience significant impacts (Piccianio, 2012). This can be observed on multiple fronts
-
-\begin{itemize}
-\tightlist
-\item
-  Data Visualization
-\end{itemize}
+\#\#Data Visualization\\
+Working with complex data is not a part of every position in an organization, but the information drawn from it can be meaningful to anyone. The importance of communication is highlighted by data visualization, arguably one of the most familiar aspects of data science to anyone outside of the field. Data visualization is a broad term describing any case in which data is visually represented in a form that allows interpretation of relationships and attribution of meaning to the information (Murray, 2017). Popular proprietary software makes generating plots a quick and simple task, providing ranges of options for visualization types in menus for easy selection; this is a commonly used feature of Microsoft Excel, where inserting \enquote{charts} requires few clicks to choose a visualization and designate portions of the available data to be used (Microsoft, 2019). This process is similar for even more specialized software for statistical analysis, like SPSS.\\
+The approach to generating the same type of graphical product in R requires a knowledge of the programming language and the preferred \texttt{tidyverse} package for visualization, \texttt{ggplot2}. Rather than choosing from menus, a user must create the code for a plot. This is the challenge in teaching R and \texttt{ggplot2}, that other options are easier to use. As mentioned, a wide range of careers can be supported by an individual becoming a student of R. A tool that uses basic R and \texttt{ggplot2} language in an intuitive point-and-click interface would allow students and others in the early stages of their data science education to build their knowledge base without sacrificing convenience of ease. Providing this solution is the intention of this project, \emph{tidyTouch}, a web application written entirely in R that provides a GUI for simple data visualization using \texttt{ggplot2}.
 
 \hypertarget{break}{%
 \section{-------------------------Break}\label{break}}
@@ -178,9 +174,9 @@ We report how we determined our sample size, all data exclusions (if any), all m
 \hypertarget{r-packages-and-session-info}{%
 \subsection{R Packages and Session Info}\label{r-packages-and-session-info}}
 
-To recognize those that contribute to R, tools used by members of the R community, and a continually developing field of data science, the software used in creating the tidyTouch app is listed: R (Version 3.6.3; R Core Team, 2020) and the R-packages \emph{dplyr} (Version 0.8.5; Wickham et al., 2020), \emph{ggplot2} (Version 3.2.1; Wickham, 2016), \emph{haven} (Version 2.1.1; Wickham \& Miller, 2019), \emph{papaja} (Version 0.1.0.9942; Aust \& Barth, 2020), \emph{reactable} (Version 0.1.0; Lin, 2019), \emph{readr} (Version 1.3.1; Wickham, Hester, \& Francois, 2018), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{shiny} (Version 1.4.0.9000; Chang, Cheng, Allaire, Xie, \& McPherson, 2019; Chang, 2018; Sievert, 2019), \emph{shinymeta} (Version 0.2.0; Sievert, 2019), \emph{shinythemes} (Version 1.1.2; Chang, 2018), and \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020).
+To recognize those that contribute to R, tools used by members of the R community, and the continually developing field of data science, the software used in creating the tidyTouch app is listed: R (Version 3.6.3; R Core Team, 2020) and the R-packages \emph{cowplot} (Version 1.0.0; Wilke, 2019), \emph{dplyr} (Version 0.8.5; Wickham et al., 2020), \emph{ggplot2} (Version 3.2.1; Wickham, 2016), \emph{haven} (Version 2.1.1; Wickham \& Miller, 2019), \emph{papaja} (Version 0.1.0.9942; Aust \& Barth, 2020), \emph{reactable} (Version 0.1.0; Lin, 2019), \emph{readr} (Version 1.3.1; Wickham, Hester, \& Francois, 2018), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{rmarkdown} (Version 2.1; Xie, Allaire, \& Grolemund, 2018), \emph{shiny} (Version 1.4.0.9000; Chang, Cheng, Allaire, Xie, \& McPherson, 2019; Chang, 2018; Sievert, 2019), \emph{shinymeta} (Version 0.2.0; Sievert, 2019), \emph{shinythemes} (Version 1.1.2; Chang, 2018), and \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020). This document was created using \texttt{papaja} and \texttt{RMarkdown} (Aust \& Barth, 2020; Xie et al., 2018).
 
-The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is listed below.
+The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
 
 \begin{verbatim}
 ## R version 3.6.3 (2020-02-29)
@@ -254,6 +250,9 @@ Microsoft. (2019). Microsoft excel, version 16.0.12819.37950. Retrieved from \ur
 \leavevmode\hypertarget{ref-minitab}{}%
 Minitab. (2020). Minitab statistical software, version 19.2020.1. Retrieved from \url{http://www.minitab.com/en-us/products/minitab/}
 
+\leavevmode\hypertarget{ref-datavis1}{}%
+Murray, S. (2017). \emph{Interactive data visualization for the web}. (M. Foley, Ed.) (2nd ed.). O'Reailly Media, Inc.
+
 \leavevmode\hypertarget{ref-osd}{}%
 Open Source Initiative. (2020). OSI: Open source definition. Retrieved from \url{https://opensource.org/docs/osd}
 
@@ -272,6 +271,9 @@ Sievert, C. (2019). \emph{Shinymeta: Record and expose shiny app logic using met
 \leavevmode\hypertarget{ref-R-ggplot2}{}%
 Wickham, H. (2016). \emph{Ggplot2: Elegant graphics for data analysis}. Springer-Verlag New York. Retrieved from \url{https://ggplot2.tidyverse.org}
 
+\leavevmode\hypertarget{ref-tidyverse}{}%
+Wickham, H. (2017). \emph{Tidyverse: Easily install and load the 'tidyverse'}. Retrieved from \url{https://CRAN.R-project.org/package=tidyverse}
+
 \leavevmode\hypertarget{ref-R-readxl}{}%
 Wickham, H., \& Bryan, J. (2019). \emph{Readxl: Read excel files}. Retrieved from \url{https://CRAN.R-project.org/package=readxl}
 
@@ -286,6 +288,15 @@ Wickham, H., Hester, J., \& Francois, R. (2018). \emph{Readr: Read rectangular t
 
 \leavevmode\hypertarget{ref-R-haven}{}%
 Wickham, H., \& Miller, E. (2019). \emph{Haven: Import and export 'spss', 'stata' and 'sas' files}. Retrieved from \url{https://CRAN.R-project.org/package=haven}
+
+\leavevmode\hypertarget{ref-R-cowplot}{}%
+Wilke, C. O. (2019). \emph{Cowplot: Streamlined plot theme and plot annotations for 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=cowplot}
+
+\leavevmode\hypertarget{ref-bigdata2}{}%
+Williamson, B. (2017). \emph{Big data in education}. (J. Clark, Ed.). SAGE Publications Inc.
+
+\leavevmode\hypertarget{ref-R-rmarkdown}{}%
+Xie, Y., Allaire, J., \& Grolemund, G. (2018). \emph{R markdown: The definitive guide}. Boca Raton, Florida: Chapman; Hall/CRC. Retrieved from \url{https://bookdown.org/yihui/rmarkdown}
 
 \endgroup
 
