@@ -1125,6 +1125,7 @@ shinyServer(function(input, output) {
       if(!is.null(position_reac())){
         al <- c(al, position = position_reac())
       }else{al <- al}
+      as.list(al)
     })
     
     geom_fun_str <- reactive({

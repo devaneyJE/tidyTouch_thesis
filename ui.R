@@ -128,11 +128,11 @@ shinyUI(navbarPage(title = "tidyTouch",
                           uiOutput("facet_check"),
                           uiOutput("facet_select"),
                           uiOutput("facet_var1"),
-                          uiOutput("facet_var2"),
-                          uiOutput("coord_check"),
-                          uiOutput("coord_select"),
-                          tags$hr(),
-                          uiOutput("update_plot")
+                          uiOutput("facet_var2")
+                          #uiOutput("coord_check"),
+                          #uiOutput("coord_select"),
+                          #tags$hr(),
+                          #uiOutput("update_plot")
                       ),#close sidebarPanel
                        
                       mainPanel(

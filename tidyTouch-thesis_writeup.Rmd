@@ -5,32 +5,13 @@ shorttitle        : "tidyTouch"
 author: 
   - name          : "Jonah DeVaney"
     affiliation   : "1"
-  - name          : "Matthew McBee"
-    affiliation   : "1"
     
 affiliation:
   - id            : "1"
     institution   : "East Tennesse State University"
 
 abstract: |
-  One or two sentences providing a **basic introduction** to the field,  comprehensible to a scientist in any discipline.
-  
-  Two to three sentences of **more detailed background**, comprehensible  to scientists in related disciplines.
-  
-  One sentence clearly stating the **general problem** being addressed by  this particular study.
-  
-  One sentence summarizing the main result (with the words "**here we show**" or their equivalent).
-  
-  Two or three sentences explaining what the **main result** reveals in direct comparison to what was thought to be the case previously, or how the  main result adds to previous knowledge.
-  
-  One or two sentences to put the results into a more **general context**.
-  
-  Two or three sentences to provide a **broader perspective**, readily comprehensible to a scientist in any discipline.
-  
-  <!-- https://tinyurl.com/ybremelq -->
-  
-keywords          : ""
-wordcount         : ""
+  abstract is going here. title page being rewritten in LaTeX to adhere to thesis submission format
 
 bibliography      : 
   - ["r-references.bib"]
@@ -47,7 +28,8 @@ draft             : no
 
 documentclass     : "apa6"
 classoption       : "man"
-output            : papaja::apa6_pdf
+output            :
+  papaja::apa6_pdf: default
 ---
 
 ```{r setup, include = FALSE}
@@ -67,7 +49,7 @@ library("rmarkdown")
 library("cowplot")
 ```
 
-```{r analysis-preferences}
+```{r analysis-preferences, echo =FALSE}
 # Seed for random number generation
 set.seed(42)
 knitr::opts_chunk$set(cache.extra = knitr::rand_seed)
@@ -98,36 +80,67 @@ plot_grid(a, b)
 ```
   
 The code displayed for these graphs subtly demonstrates a concept at the core of `ggplot2` and other `Tidyverse` packages. These tools are designed to be utilized in the infinitely complex workflow of a data scientist, where a person is performing multiple operations on an object in a series of steps [@tidyverse]. This object is often a dataset that is being read, summarized, or transformed to a "tidy" format, hence the name of the suite. Packages like `dplyr` and `ggplot2`, that use datasets saved in R, require this tidy format, which can be simply described as every variable having a column to represent it and each data point or observation for that variable makes a row [@R-ggplot2]. Working with data in this format and gaining experience with `Tidyverse` packages can demonstrate the importance of workflow organization and exposure to proper practice during data science education.   
-Using R often involves much more than importing a dataset and performing the desired analysis. Once a file is imported, manipulating the data is often necessary. This is referred to as transformation, which involves rearranging, filtering, condensing, or calculating new components of datasets. All of these operations are done with simple functions, verbs that represent complex operations in R and take on the form of `f(x, y, ...)` in code [@R-dplyr]. The `x` represents the object being acted on with `y, ...` representing any options to specify for the operation. As an analyst transforms data, the series of steps used can be simplified by combining the verbs into a single string of multiple operations using a pipe (`%>%`). In the code below, a set of examples partially represented in `dplyr` documentation [@R-dplyr] is given showing the same process with and without pipes. 
+Using R can involve much more than importing a dataset and performing the desired analysis. Once a file is imported, manipulating the data is often necessary. This is referred to as transformation, which involves rearranging, filtering, condensing, or calculating new components of datasets. All of these operations are done with simple functions, verbs that represent complex operations in R and take on the form of `f(x, y, ...)` in code [@R-dplyr]. The "`x`" represents the object being acted on with "`y, ...`" representing any specification of options for the operation. As an analyst transforms data, the series of steps used can be simplified by combining the verbs into a single string of multiple operations using a pipe (`%>%`). In the code below, a set of examples partially represented in `dplyr` documentation [@R-dplyr] is given showing the same process with and without pipes. 
 ```{r, echo=T, eval=F}
-#without pipes
 a <- mutate(mtcars, gpm = 1/mpg)
 b <- arrange(a, gpm)
-
-#with pipes
-c <- mtcars %>% 
-  mutate(gpm = 1/mpg) %>% 
-  arrange(gpm)
+#with pipes, the above becomes:
+c <- mtcars %>% mutate(gpm = 1/mpg) %>% arrange(gpm)
 ```
 In both cases, the original dataset was used to create a new variable, and the rows of the expanded dataset were arranged by increasing order for the new variable. The first example requires saving multiple individual functions and changing the object being referenced. In a short series, this makes little difference compared to the second example; however the format with pipes will remain consistent with additional steps. This process could be expanded to include significantly more verbs, and with pipes, the end state of the process would be easily carried forward. The design of `tidyTouch` incorporates many `Tidyverse` package functions, as well as the use of pipes, to familiarize students of R with both the operations and format that they will find consistent in work across the data science field.  
 
-## *tidyTouch*  
-Web applications (apps) are designed to make useful programs accessible online, able to be used freely without the hassle of installation processes. R can be used to create web apps with the help of the `Shiny` package [@R-shiny], which converts R instructions to the type of code needed to design and format web pages. By using `Shiny` functions, an R programmer can create a web app that responds to user interaction by providing that user's input to a pre-built R program. This is useful for providing data and intended manipulations to non-programmers through educational tools [@R-shiny;@rstudio]. The target problems discussed, namely accessibility, convenience and simplicity of use, and appropriate contributions to an individual's experience in developing and understanding of R, have attempted to be addressed by this project, `tidyTouch`, a web application written entirely in R that provides a GUI for simple data visualization using `ggplot2`.  
+## *Shiny*: Web Applications in R  
+Web applications (apps) are designed to make useful programs accessible online, able to be used freely without the hassle of installation processes. R can be used to create web apps with the help of the `Shiny` package [@R-shiny], which converts R instructions to the type of code needed to design and format web pages. By using `Shiny` functions, an R programmer can create a web app that responds to user interaction by providing that user's input to a pre-built R program. This is useful for providing data and intended manipulations to non-programmers through educational tools [@R-shiny;@rstudio]. With the main challenge in choosing R as an analysis tool being its ease of use, using web apps can serve as a transitional tool by introducing the concepts and terms involved in the analysis without students needing full understanding of the underlying code. The discussed target problems around learning and using programs for working with data, namely accessibility, convenience and simplicity of use, and appropriate contributions to an individual's experience in developing and understanding of R, have attempted to be addressed by this project, `tidyTouch`, a web application written entirely in R that provides a GUI for simple data transformation and visualization using `ggplot2` and other `Tidyverse` packages.
 
-# Development
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study. <!-- 21-word solution (Simmons, Nelson & Simonsohn, 2012; retrieved from http://ssrn.com/abstract=2160588) -->
+# Design and Development  
+The `tidyTouch` app was developed using `Shiny` to give an intuitive platform capturing the steps necessary for working with the R language for data visualization. The design will be discussed in the order of a standard workflow, showing the relevance of individual packages in the steps necessary for data visualization. These steps include importing data, visually evaluating the data structure, transforming the data as needed, and generating a graphic representing chosen data points. It is important to mention the status of this project being a work in progress, which is discussed in detail under the "Status and Future Development" subheading.  
 
+## Importing and Viewing Data  
+Users of `tidyTouch` are met with an interface including three tabs: Data, Plot, and Code. The process starts on the Data tab's panel, where a source of data is selected from a drop-down menu. Selected datasets, all of which accessible by any user of base R, were included as options to allow exploration of `tidyTouch` functionality without needing to provide an original source. The menu also provides the "Import Dataset" option, which displays a menu for choosing between CSV, TSV, Excel, SAS, SPSS, and Stata file types. With the file type selected, a "browse" button is used to open a window for selecting data from the user's personal system. A checkbox option for "Header" is automatically selected, but can be unchecked should a dataset not have variable names as the first row of entries. Once a source has been selected, the data can be viewed in a table with that provides abilities to search for and sort values. On the panel, a user can view the `head` - the first few lines of the dataset - or the full file. The final viewing feature is a window that prints the structure (`str`) of the data, which contains information about the types of values in the table.   
+The intentions for these features were to provide options that any user may be familiar with or will be necessary to learn in R. In many tutorials or guides, such as the RStudio Primers or *Cookbook for R*, preloaded datasets are used to demonstrate modifications to code [@cook-graphs;@rstudio]. A variety of these common datasets were included, in addition to allowing exploration of the app, to maintain consistency with examples student of R are likely to encounter. The file types chosen are likely to be used by those working with other analysis tools, and their selection in the menu utilizes functions from the `haven`, `readr`, and `readxl` packages [@R-haven;@R-readr;@R-readxl]. The "Header" checkbox includes an important argument for many of these functions that is necessary for variables to be recognized correctly. Code from the `reactable` package [@R-reactable] was used to support the point-and-click interactivity for viewing data, limiting the amount of transformation necessary for a new user to examine their data. The `head` option is set as a default to prevent loading large datasets to interfere with the usability of the app. Using the `head()` function is more useful in a development environment, where printing a dataset in its entirety serves little purpose for a programmer. Inclusion of the `head` option serves to improve the performance of the application, while familiarizing students with terminology involved in typical practice of more advanced R users.  
 
-# Discussion
+## Transformations  
+Being able to alter a dataset for sorting or creating variables is necessary for any work with data. These features are implemented in any spreadsheet editing program, like Microsoft Excel's use of "formulas" [@excel]. Even with a significantly more complex range of possible alterations available through `dplyr` and `tidyr` [@R-dplyr;@R-tidyr], only a few options are made available to keep the app's functionality intuitive for those with limited experience generating or manipulating data. Variable types can be changed to indicate their status as numeric, categorical, or strings of characters (such as names). The dataset can also be filtered by selecting only certain values for a given variable, condensing data to a target range for analysis. Grouping information with a specified variable does not condense the data, but allows future operations to be applied within groups. This feature can be used in conjunction with other transformation functions that are discussed under "Future Status and Development." Functions from `dplyr` and base R are used for these features [@R-dplyr;@R-base].  
+
+## Visualization  
+Creating graphics using `tidyTouch` involves selecting attributes from a series of menus on the Plot tab. Users can choose to create visualizations for one or two variables, with all variables from the chosen dataset being listed in drop-down menus. The type of geometric object for the plot is chosen, with the options changing based on the number of variables being observed. Theme changes and faceting are also controlled in this panel, with each change manifesting in a graphic on the main section of the display. As mentioned, only the data represented by the plot and a layer are necessary to create plot; the theme and faceting options are not set to be included unless othewise specified. Below the graphic, additional components are nested within tabs, where a user can add labels, such as a title or axis names, or modify the plot's aesthetics, such as color, size and transparency.  
+The options available are limited to commonly used graphs and customizations in `ggplot2`. All terms used for layers, themes, faceting types, and aesthetic specifications match the package's code that would be used in a development environment to create identical graphics. This familiarizes a user with the terminology used in `ggplot2` to enhance the utility of `tidyTouch` as a *transitional* learning tool, so that practice from the environment of the app is transferrable to writing R code. Under aesthetic specifications, the options available are dependent on the chosen geometric object to only allow user to make changes appropriate for the type of graph being created. Conditional displays are used with faceting, as well as the tabs underneath the graphic to minimize clutter from these expanding components when not in use.  
+
+## *Shiny* Reactivity and Code Printing  
+Reactivity refers to the dynamic changes demonstrated by `tidyTouch`, with interaction altering the interface. This is apparent in cases of some menu choices providing additional options, or changing the contents of other menus - how different geometric objects and aesthetic specifications are made available. `Shiny` reactivity also allows input by a user to generate components, displaying information such as variable names in menus and input modules. This aspect of `Shiny` allows the selections of the app user to determine which elements of a `ggplot2` graphic's code to use when creating the visualization; extra information or missing values would both prevent any graphic from being generated. By determining which code to use for the visualization, the app can print the most simple form of code that a student would use to recreate their visualization in the RStudio IDE.  
+Giving students of R an opportunity to make graphics with a point-and-click interface, while providing the code necessary for the process, `tidyTouch` aims to provide a platform for learning about data visualization with R to those without programming experience. Relying on reactive `Shiny` components, however, the operations discussed require a significantly more complex design than one would need in writing R scripts to accomplish the same results. The example below shows how reactive `Shiny` programming differs from the equivalent R code.  
+```{r eval=FALSE, echo = T}
+# standard R
+data <- airquality
+data %>% ggplot(aes(x = Day, y = Solar.R)) + geom_line()
+# reactive Shiny (condensed)
+reactive_data <- reactive({...else if(input$data_source == "airquality"){
+  airquality}...})            # "airquality" selected in data source menu
+reactive_geom <- reactive ({...else if(input$geom == "Line"){
+  geom_line()}...})           # "Line" selected in geom menu
+reactive_x <- reactive({input$x_variable}) # "Day" variable selected
+reactive_y <- reactive({input$y_variable}) # "Solar.R" variable selected
+reactive_data() %>% ggplot(aes(x = reactive_x(), y = reactive_y()))+ 
+  reactive_geom()             #reactive Shiny graphic code
+```  
+This complexity poses a significant challenge to a `Shiny` web app's contribution to data science education. The developers of `Shiny` [@R-shiny] recognize the potential utility of these web applications as teaching tools for the R language itself, and a package currently under development attempts to address this problem. The `shinymeta` package allows a programmer to translate code from a `Shiny` application to the format that would be used directly in R [@R-shinymeta]. As `tidyTouch` displays code for a plot that has been created, `shinymeta` makes readable code that is useful to a beginner's learning process.
+
+**still working with code to see where to include section on `shinymeta` with demonstration; will likely be placed here**
+
+# Discussion  
+## Status and Future Development  
+
 ## Applications and Audiences
 
-## R Packages and Session Info  
-To recognize those that contribute to R, tools used by members of the R community, and the continually developing field of data science, the software used in creating the tidyTouch app is listed: `r cite_r("r-references.bib")`. This document was created using `papaja` and `rmarkdown` [@R-papaja;@R-rmarkdown].
+## R Packages and Session Info
+To recognize those that contribute to R, tools used by members of the R community, and the continually developing field of data science, the software used in creating the tidyTouch app is listed: `r cite_r("r-references.bib")`. This document was created using `papaja` and `rmarkdown` [@R-papaja;@R-rmarkdown]. Documentation for individual packages may include links to additional educational resources, like the `Tidyverse` cheat sheets from RStudio.
 
-The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
+The session info for this project in its current state - the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
 ```{r echo=FALSE}
 sessionInfo()
 ```
+\newpage
+# Screenshots  
 
 
 \newpage

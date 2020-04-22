@@ -130,11 +130,10 @@
   {}{\typeout{Failed to patch abstract.}}
 \makeatother
 \shorttitle{tidyTouch}
-\author{Jonah DeVaney\textsuperscript{1}\ \& Matthew McBee\textsuperscript{1}}
+\author{Jonah DeVaney\textsuperscript{1}}
 \affiliation{
 \vspace{0.5cm}
 \textsuperscript{1} East Tennesse State University}
-\keywords{\newline\indent Word count: }
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -155,19 +154,7 @@
 \date{}
 
 \abstract{
-One or two sentences providing a \textbf{basic introduction} to the field, comprehensible to a scientist in any discipline.
-
-Two to three sentences of \textbf{more detailed background}, comprehensible to scientists in related disciplines.
-
-One sentence clearly stating the \textbf{general problem} being addressed by this particular study.
-
-One sentence summarizing the main result (with the words ``\textbf{here we show}'' or their equivalent).
-
-Two or three sentences explaining what the \textbf{main result} reveals in direct comparison to what was thought to be the case previously, or how the main result adds to previous knowledge.
-
-One or two sentences to put the results into a more \textbf{general context}.
-
-Two or three sentences to provide a \textbf{broader perspective}, readily comprehensible to a scientist in any discipline.
+abstract is going here. title page being rewritten in LaTeX to adhere to thesis submission format
 }
 
 \begin{document}
@@ -179,13 +166,13 @@ Two or three sentences to provide a \textbf{broader perspective}, readily compre
 Technology is an absolute necessity in professional and academic spaces, where engineers, researchers, programmers, and more utilize an ever-growing collection of digital tools for organizing and analyzing the information vital to their work. Free and open-source software (FOSS) provides opportunities for unconditional access to useful programs and their source code for the sake of modification, improvement, and further sharing (Open Source Initiative, 2020). In cases where software is used for statistical analysis, many find R, a programming language for statistical analyses, to be a universally applicable tool to which many dedicated maintainers and community members contribute (R Core Team, 2020). While accessibility and extensive documentation make R available to individuals with limited knowledge or experience with programming, it is a more technically advanced tool, where a user writes code to read data, perform analyses, and create reports. This barrier gives reason to consider software options that may have limited capability but provide a more intuitive interface.\\
 Combinations of spreadsheet editing programs like Microsoft Excel (Microsoft, 2019) and statistical analysis software like Minitab (Minitab, 2020) and IBM SPSS (IBM, 2017) allow less experienced analysts, like students, to visualize the possible structures and operations available for use with their data. These are typically marketed with intentions of the majority of users taking advantage of the graphical user interfaces (GUI), which are designed to give a point-and-click interaction method that engages the underlying code. These have the disadvantages of limited automation and accessibility, where users must manually perform steps of their analyses, often multiple times, on systems granted permission through paid subscriptions for software usage \textbf{citation needed?}.\\
 The R community and immensely popular integrated development environment (IDE), RStudio, encourage the same transparency and information-sharing reflected in the mentality of FOSS distribution (RStudio Team, 2020). Analyses in R can be performed in the console, where commands are given in the R language to be interpreted by the system. These analyses can just as easily be written in the form of a script that can be run as a combination of all operations intentionally recorded. Providing a powerful set of methods with infinite complexity, R programming is useful for anyone that works with data. As the practice of using large amounts of data to inform processes in various fields becomes more common through the expansion of data science as a field, education has and will continue to experience significant impacts (Piccianio, 2012). This can be observed on multiple fronts, where data science practices can be utilized by educational institutions in operation, as well as be implemented more as instructional content (Williamson, 2017).\\
-Data science education has the potential to bring those that would otherwise use proprietary, GUI-based programs, like those previously mentioned, the small amount of technical training required to begin developing proficiency with tools like R. The language and its additional packages, supplemental files that allow expanded capabilities defined by their authors \textbf{citation needed?}, have extensive documentation that can be easily viewed within the RStudio IDE (RStudio Team, 2020); however, these are written as technical manuals that read in the format of R. The need to assist new students of R in gaining a literacy level in which they can solve problems on their own has motivated projects like the development of RStudio's Primers, online tutorials that teach basic example scenarios to utilize the RStudio suite of packages known as the \texttt{tidyverse} (RStudio Team, 2020; Wickham, 2017). These kinds of resources for data science education are crucial for training new academics and professionals as they work to embrace the ever-growing importance of data.
+Data science education has the potential to bring those that would otherwise use proprietary, GUI-based programs, like those previously mentioned, the small amount of technical training required to begin developing proficiency with tools like R. The language and its additional packages, supplemental files that allow expanded capabilities defined by their authors \textbf{citation needed?}, have extensive documentation that can be easily viewed within the RStudio IDE (RStudio Team, 2020); however, these are written as technical manuals that read in the format of R. The need to assist new students of R in gaining a literacy level in which they can solve problems on their own has motivated projects like the development of RStudio's Primers, online tutorials that teach basic example scenarios to utilize the RStudio suite of packages known as the \texttt{Tidyverse} (RStudio Team, 2020; Wickham, 2017). These kinds of resources for data science education are crucial for training new academics and professionals as they work to embrace the ever-growing importance of data.
 
 \hypertarget{data-visualization}{%
 \subsection{Data Visualization}\label{data-visualization}}
 
 Working with complex data is not a part of every position in an organization, but the information drawn from it can be meaningful to anyone. The importance of communication is highlighted by data visualization, arguably one of the most familiar aspects of data science to anyone outside of the field. Data visualization is a broad term describing any case in which data is visually represented in a form that allows interpretation of relationships and attribution of meaning to the information (Murray, 2017). Popular proprietary software makes generating plots a quick and simple task, providing ranges of options for visualization types in menus for easy selection; this is a commonly used feature of Microsoft Excel, where inserting \enquote{charts} requires few clicks to choose a visualization and designate portions of the available data to be used (Microsoft, 2019). This process is similar for even more specialized software for statistical analysis, like SPSS.\\
-The approach to generating the same type of graphical product in R requires a knowledge of the programming language and the preferred \texttt{tidyverse} package for visualization, \texttt{ggplot2}. Rather than choosing from menus, a user must create the code for a plot. This is the challenge in teaching R and \texttt{ggplot2}, that other options are easier to use. As mentioned, a wide range of careers can be supported by an individual becoming a student of R. A tool that uses basic R and \texttt{ggplot2} language in an intuitive point-and-click interface would allow students and others in the early stages of their data science education to build their knowledge base without sacrificing convenience of ease. Providing this solution is the intention of this project, \texttt{tidyTouch}, a web application written entirely in R that provides a GUI for simple data visualization using \texttt{ggplot2}.
+The approach to generating the same type of graphical product in R requires a knowledge of the programming language and the preferred \texttt{tidyverse} package for visualization, \texttt{ggplot2}. Rather than choosing from menus, a user must create the code for a plot. This is the challenge in teaching R and \texttt{ggplot2}, that other options are easier to use. As mentioned, a wide range of careers can be supported by an individual becoming a student of R. A tool that uses basic R and \texttt{ggplot2} language in an intuitive point-and-click interface would allow students and others in the early stages of their data science education to build their knowledge base without sacrificing convenience of ease.
 
 \hypertarget{ggplot2-and-the-tidyverse}{%
 \subsection{\texorpdfstring{\emph{ggplot2} and The Tidyverse}{ggplot2 and The Tidyverse}}\label{ggplot2-and-the-tidyverse}}
@@ -207,61 +194,89 @@ Every graphic is composed of the same basic components that are each addressed b
 \caption{\label{fig:basic}The two graphics are both comparing horsepower with gas mileage of cars in a sample R dataset. The (right) shows faceting by the number of cylinders a car has.}
 \end{figure}
 
-The code displayed for these graphs subtly demonstrates a concept at the core of \texttt{ggplot2} and other \texttt{Tidyverse} packages. These tools are designed to be utilized in the infinitely complex workflow of a data scientist, where a person is performing multiple operations on an object in a series of steps (Wickham, 2017). This object is often a dataset that is being read, summarized, or transformed to a \enquote{tidy} format, hence the name of the suite. Packages like \texttt{dplyr} and \texttt{ggplot2}, that use datasets saved in R, require this tidy format, which can be simply described as every variable having a column to represent it and each data point or observation for that variable makes a row (Wickham, 2016). Understanding how to establish an efficient workflow is an essential skill to be covered in data science education, and \texttt{tidyTouch} utilizes a few of the most common packages for working with data.\\
-Using R often involves much more than importing a dataset and performing the desired analysis. Once a file is imported, manipulating the data is often necessary. This is referred to as transformation, which involves rearranging, filtering, condensing, or calculating new components of datasets. All of these operations are done with simple functions, verbs that represent complex operations in R and take on the form of \texttt{f(x,\ y,\ ...)} in code (Wickham et al., 2020). The \texttt{x} represents the object being acted on with \texttt{y,\ ...} representing any options to specify for the operation. As an analyst transforms data, the series of steps used can be simplified by combining the verbs into a single string of multiple operations using a pipe (\texttt{\%\textgreater{}\%}). In the code below, a set of examples partially represented in \texttt{dplyr} documentation (Wickham et al., 2020) is given showing the same process with and without pipes.
+The code displayed for these graphs subtly demonstrates a concept at the core of \texttt{ggplot2} and other \texttt{Tidyverse} packages. These tools are designed to be utilized in the infinitely complex workflow of a data scientist, where a person is performing multiple operations on an object in a series of steps (Wickham, 2017). This object is often a dataset that is being read, summarized, or transformed to a \enquote{tidy} format, hence the name of the suite. Packages like \texttt{dplyr} and \texttt{ggplot2}, that use datasets saved in R, require this tidy format, which can be simply described as every variable having a column to represent it and each data point or observation for that variable makes a row (Wickham, 2016). Working with data in this format and gaining experience with \texttt{Tidyverse} packages can demonstrate the importance of workflow organization and exposure to proper practice during data science education.\\
+Using R can involve much more than importing a dataset and performing the desired analysis. Once a file is imported, manipulating the data is often necessary. This is referred to as transformation, which involves rearranging, filtering, condensing, or calculating new components of datasets. All of these operations are done with simple functions, verbs that represent complex operations in R and take on the form of \texttt{f(x,\ y,\ ...)} in code (Wickham et al., 2020). The \enquote{\texttt{x}} represents the object being acted on with \enquote{\texttt{y,\ ...}} representing any specification of options for the operation. As an analyst transforms data, the series of steps used can be simplified by combining the verbs into a single string of multiple operations using a pipe (\texttt{\%\textgreater{}\%}). In the code below, a set of examples partially represented in \texttt{dplyr} documentation (Wickham et al., 2020) is given showing the same process with and without pipes.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{#without pipes}
 \NormalTok{a <-}\StringTok{ }\KeywordTok{mutate}\NormalTok{(mtcars, }\DataTypeTok{gpm =} \DecValTok{1}\OperatorTok{/}\NormalTok{mpg)}
 \NormalTok{b <-}\StringTok{ }\KeywordTok{arrange}\NormalTok{(a, gpm)}
-
-\CommentTok{#with pipes}
-\NormalTok{c <-}\StringTok{ }\NormalTok{mtcars }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{gpm =} \DecValTok{1}\OperatorTok{/}\NormalTok{mpg) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{arrange}\NormalTok{(gpm)}
+\CommentTok{#with pipes, the above becomes:}
+\NormalTok{c <-}\StringTok{ }\NormalTok{mtcars }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{gpm =} \DecValTok{1}\OperatorTok{/}\NormalTok{mpg) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{arrange}\NormalTok{(gpm)}
 \end{Highlighting}
 \end{Shaded}
 
 In both cases, the original dataset was used to create a new variable, and the rows of the expanded dataset were arranged by increasing order for the new variable. The first example requires saving multiple individual functions and changing the object being referenced. In a short series, this makes little difference compared to the second example; however the format with pipes will remain consistent with additional steps. This process could be expanded to include significantly more verbs, and with pipes, the end state of the process would be easily carried forward. The design of \texttt{tidyTouch} incorporates many \texttt{Tidyverse} package functions, as well as the use of pipes, to familiarize students of R with both the operations and format that they will find consistent in work across the data science field.
 
-\hypertarget{shiny-r-and-web-applications}{%
-\subsection{\texorpdfstring{\emph{Shiny}: R and Web Applications}{Shiny: R and Web Applications}}\label{shiny-r-and-web-applications}}
+\hypertarget{shiny-web-applications-in-r}{%
+\subsection{\texorpdfstring{\emph{Shiny}: Web Applications in R}{Shiny: Web Applications in R}}\label{shiny-web-applications-in-r}}
 
-Web applications (apps) are designed to make useful programs accessible online, able to be used freely without the hassle of installation processes. R can be used to create web apps with the help of the \texttt{Shiny} package (Chang, Cheng, Allaire, Xie, \& McPherson, 2019), which converts R instructions to the type of code needed to design and format web pages. By using \texttt{Shiny} functions, an R programmer can create a web app that responds to user interaction by providing that user's input to a pre-built R program. This is useful for providing data and intended manipulations to non-programmers through educational tools (Chang et al., 2019; RStudio Team, 2020).
+Web applications (apps) are designed to make useful programs accessible online, able to be used freely without the hassle of installation processes. R can be used to create web apps with the help of the \texttt{Shiny} package (Chang, Cheng, Allaire, Xie, \& McPherson, 2019), which converts R instructions to the type of code needed to design and format web pages. By using \texttt{Shiny} functions, an R programmer can create a web app that responds to user interaction by providing that user's input to a pre-built R program. This is useful for providing data and intended manipulations to non-programmers through educational tools (Chang et al., 2019; RStudio Team, 2020). With the main challenge in choosing R as an analysis tool being its ease of use, using web apps can serve as a transitional tool by introducing the concepts and terms involved in the analysis without students needing full understanding of the underlying code. The discussed target problems around learning and using programs for working with data, namely accessibility, convenience and simplicity of use, and appropriate contributions to an individual's experience in developing and understanding of R, have attempted to be addressed by this project, \texttt{tidyTouch}, a web application written entirely in R that provides a GUI for simple data transformation and visualization using \texttt{ggplot2} and other \texttt{Tidyverse} packages.
 
-\hypertarget{break}{%
-\section{-------------------------Break}\label{break}}
+\hypertarget{design-and-development}{%
+\section{Design and Development}\label{design-and-development}}
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
+The \texttt{tidyTouch} app was developed using \texttt{Shiny} to give an intuitive platform capturing the steps necessary for working with the R language for data visualization. The design will be discussed in the order of a standard workflow, showing the relevance of individual packages in the steps necessary for data visualization. These steps include importing data, visually evaluating the data structure, transforming the data as needed, and generating a graphic representing chosen data points. It is important to mention the status of this project being a work in progress, which is discussed in detail under the \enquote{Status and Future Development} subheading.
 
-We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.
+\hypertarget{importing-and-viewing-data}{%
+\subsection{Importing and Viewing Data}\label{importing-and-viewing-data}}
 
-\hypertarget{participants}{%
-\subsection{Participants}\label{participants}}
+Users of \texttt{tidyTouch} are met with an interface including three tabs: Data, Plot, and Code. The process starts on the Data tab's panel, where a source of data is selected from a drop-down menu. Selected datasets, all of which accessible by any user of base R, were included as options to allow exploration of \texttt{tidyTouch} functionality without needing to provide an original source. The menu also provides the \enquote{Import Dataset} option, which displays a menu for choosing between CSV, TSV, Excel, SAS, SPSS, and Stata file types. With the file type selected, a \enquote{browse} button is used to open a window for selecting data from the user's personal system. A checkbox option for \enquote{Header} is automatically selected, but can be unchecked should a dataset not have variable names as the first row of entries. Once a source has been selected, the data can be viewed in a table with that provides abilities to search for and sort values. On the panel, a user can view the \texttt{head} - the first few lines of the dataset - or the full file. The final viewing feature is a window that prints the structure (\texttt{str}) of the data, which contains information about the types of values in the table.\\
+The intentions for these features were to provide options that any user may be familiar with or will be necessary to learn in R. In many tutorials or guides, such as the RStudio Primers or \emph{Cookbook for R}, preloaded datasets are used to demonstrate modifications to code (Chang, 2013; RStudio Team, 2020). A variety of these common datasets were included, in addition to allowing exploration of the app, to maintain consistency with examples student of R are likely to encounter. The file types chosen are likely to be used by those working with other analysis tools, and their selection in the menu utilizes functions from the \texttt{haven}, \texttt{readr}, and \texttt{readxl} packages (Wickham \& Bryan, 2019; Wickham, Hester, \& Francois, 2018; Wickham \& Miller, 2019). The \enquote{Header} checkbox includes an important argument for many of these functions that is necessary for variables to be recognized correctly. Code from the \texttt{reactable} package (Lin, 2019) was used to support the point-and-click interactivity for viewing data, limiting the amount of transformation necessary for a new user to examine their data. The \texttt{head} option is set as a default to prevent loading large datasets to interfere with the usability of the app. Using the \texttt{head()} function is more useful in a development environment, where printing a dataset in its entirety serves little purpose for a programmer. Inclusion of the \texttt{head} option serves to improve the performance of the application, while familiarizing students with terminology involved in typical practice of more advanced R users.
 
-\hypertarget{material}{%
-\subsection{Material}\label{material}}
+\hypertarget{transformations}{%
+\subsection{Transformations}\label{transformations}}
 
-\hypertarget{procedure}{%
-\subsection{Procedure}\label{procedure}}
+Being able to alter a dataset for sorting or creating variables is necessary for any work with data. These features are implemented in any spreadsheet editing program, like Microsoft Excel's use of \enquote{formulas} (Microsoft, 2019). Even with a significantly more complex range of possible alterations available through \texttt{dplyr} and \texttt{tidyr} (Wickham et al., 2020; Wickham \& Henry, 2020), only a few options are made available to keep the app's functionality intuitive for those with limited experience generating or manipulating data. Variable types can be changed to indicate their status as numeric, categorical, or strings of characters (such as names). The dataset can also be filtered by selecting only certain values for a given variable, condensing data to a target range for analysis. Grouping information with a specified variable does not condense the data, but allows future operations to be applied within groups. This feature can be used in conjunction with other transformation functions that are discussed under \enquote{Future Status and Development.} Functions from \texttt{dplyr} and base R are used for these features (R Core Team, 2020; Wickham et al., 2020).
 
-\hypertarget{data-analysis}{%
-\subsection{Data analysis}\label{data-analysis}}
+\hypertarget{visualization}{%
+\subsection{Visualization}\label{visualization}}
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+Creating graphics using \texttt{tidyTouch} involves selecting attributes from a series of menus on the Plot tab. Users can choose to create visualizations for one or two variables, with all variables from the chosen dataset being listed in drop-down menus. The type of geometric object for the plot is chosen, with the options changing based on the number of variables being observed. Theme changes and faceting are also controlled in this panel, with each change manifesting in a graphic on the main section of the display. As mentioned, only the data represented by the plot and a layer are necessary to create plot; the theme and faceting options are not set to be included unless othewise specified. Below the graphic, additional components are nested within tabs, where a user can add labels, such as a title or axis names, or modify the plot's aesthetics, such as color, size and transparency.\\
+The options available are limited to commonly used graphs and customizations in \texttt{ggplot2}. All terms used for layers, themes, faceting types, and aesthetic specifications match the package's code that would be used in a development environment to create identical graphics. This familiarizes a user with the terminology used in \texttt{ggplot2} to enhance the utility of \texttt{tidyTouch} as a \emph{transitional} learning tool, so that practice from the environment of the app is transferrable to writing R code. Under aesthetic specifications, the options available are dependent on the chosen geometric object to only allow user to make changes appropriate for the type of graph being created. Conditional displays are used with faceting, as well as the tabs underneath the graphic to minimize clutter from these expanding components when not in use.
+
+\hypertarget{shiny-reactivity-and-code-printing}{%
+\subsection{\texorpdfstring{\emph{Shiny} Reactivity and Code Printing}{Shiny Reactivity and Code Printing}}\label{shiny-reactivity-and-code-printing}}
+
+Reactivity refers to the dynamic changes demonstrated by \texttt{tidyTouch}, with interaction altering the interface. This is apparent in cases of some menu choices providing additional options, or changing the contents of other menus - how different geometric objects and aesthetic specifications are made available. \texttt{Shiny} reactivity also allows input by a user to generate components, displaying information such as variable names in menus and input modules. This aspect of \texttt{Shiny} allows the selections of the app user to determine which elements of a \texttt{ggplot2} graphic's code to use when creating the visualization; extra information or missing values would both prevent any graphic from being generated. By determining which code to use for the visualization, the app can print the most simple form of code that a student would use to recreate their visualization in the RStudio IDE.\\
+Giving students of R an opportunity to make graphics with a point-and-click interface, while providing the code necessary for the process, \texttt{tidyTouch} aims to provide a platform for learning about data visualization with R to those without programming experience. Relying on reactive \texttt{Shiny} components, however, the operations discussed require a significantly more complex design than one would need in writing R scripts to accomplish the same results. The example below shows how reactive \texttt{Shiny} programming differs from the equivalent R code.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# standard R}
+\NormalTok{data <-}\StringTok{ }\NormalTok{airquality}
+\NormalTok{data }\OperatorTok{%>%}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Day, }\DataTypeTok{y =}\NormalTok{ Solar.R)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{()}
+\CommentTok{# reactive Shiny (condensed)}
+\NormalTok{reactive_data <-}\StringTok{ }\KeywordTok{reactive}\NormalTok{(\{...else }\ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{data_source }\OperatorTok{==}\StringTok{ "airquality"}\NormalTok{)\{}
+\NormalTok{  airquality\}...\})            }\CommentTok{# "airquality" selected in data source menu}
+\NormalTok{reactive_geom <-}\StringTok{ }\KeywordTok{reactive}\NormalTok{ (\{...else }\ControlFlowTok{if}\NormalTok{(input}\OperatorTok{$}\NormalTok{geom }\OperatorTok{==}\StringTok{ "Line"}\NormalTok{)\{}
+  \KeywordTok{geom_line}\NormalTok{()\}...\})           }\CommentTok{# "Line" selected in geom menu}
+\NormalTok{reactive_x <-}\StringTok{ }\KeywordTok{reactive}\NormalTok{(\{input}\OperatorTok{$}\NormalTok{x_variable\}) }\CommentTok{# "Day" variable selected}
+\NormalTok{reactive_y <-}\StringTok{ }\KeywordTok{reactive}\NormalTok{(\{input}\OperatorTok{$}\NormalTok{y_variable\}) }\CommentTok{# "Solar.R" variable selected}
+\KeywordTok{reactive_data}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =} \KeywordTok{reactive_x}\NormalTok{(), }\DataTypeTok{y =} \KeywordTok{reactive_y}\NormalTok{()))}\OperatorTok{+}\StringTok{ }
+\StringTok{  }\KeywordTok{reactive_geom}\NormalTok{()             }\CommentTok{#reactive Shiny graphic code}
+\end{Highlighting}
+\end{Shaded}
+
+This complexity poses a significant challenge to a \texttt{Shiny} web app's contribution to data science education. The developers of \texttt{Shiny} (Chang et al., 2019) recognize the potential utility of these web applications as teaching tools for the R language itself, and a package currently under development attempts to address this problem. The \texttt{shinymeta} package allows a programmer to translate code from a \texttt{Shiny} application to the format that would be used directly in R (Sievert, 2019). As \texttt{tidyTouch} displays code for a plot that has been created, \texttt{shinymeta} makes readable code that is useful to a beginner's learning process.
+
+\textbf{still working with code to see where to include section on \texttt{shinymeta} with demonstration; will likely be placed here}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
 
+\hypertarget{status-and-future-development}{%
+\subsection{Status and Future Development}\label{status-and-future-development}}
+
+\hypertarget{applications-and-audiences}{%
+\subsection{Applications and Audiences}\label{applications-and-audiences}}
+
 \hypertarget{r-packages-and-session-info}{%
 \subsection{R Packages and Session Info}\label{r-packages-and-session-info}}
 
-To recognize those that contribute to R, tools used by members of the R community, and the continually developing field of data science, the software used in creating the tidyTouch app is listed: R (Version 3.6.3; R Core Team, 2020) and the R-packages \emph{cowplot} (Version 1.0.0; Wilke, 2019), \emph{dplyr} (Version 0.8.5; Wickham et al., 2020), \emph{ggplot2} (Version 3.2.1; Wickham, 2016), \emph{haven} (Version 2.1.1; Wickham \& Miller, 2019), \emph{papaja} (Version 0.1.0.9942; Aust \& Barth, 2020), \emph{reactable} (Version 0.1.0; Lin, 2019), \emph{readr} (Version 1.3.1; Wickham, Hester, \& Francois, 2018), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{rmarkdown} (Version 2.1; Xie, Allaire, \& Grolemund, 2018), \emph{shiny} (Version 1.4.0.9000; Chang et al., 2019; Chang, 2018; Sievert, 2019), \emph{shinymeta} (Version 0.2.0; Sievert, 2019), \emph{shinythemes} (Version 1.1.2; Chang, 2018), and \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020). This document was created using \texttt{papaja} and \texttt{rmarkdown} (Aust \& Barth, 2020; Xie et al., 2018).
+To recognize those that contribute to R, tools used by members of the R community, and the continually developing field of data science, the software used in creating the tidyTouch app is listed: R (Version 3.6.3; R Core Team, 2020) and the R-packages * cowplot* {[}@ R-cowplot{]}, \emph{dplyr} (Version 0.8.5; Wickham et al., 2020), \emph{ggplot2} (Version 3.2.1; Wickham, 2016), \emph{haven} (Version 2.1.1; Wickham \& Miller, 2019), \emph{papaja} (Version 0.1.0.9942; Aust \& Barth, 2020), \emph{reactable} (Version 0.1.0; Lin, 2019), \emph{readr} (Version 1.3.1; Wickham et al., 2018), \emph{readxl} (Version 1.3.1; Wickham \& Bryan, 2019), \emph{rmarkdown} (Version 2.1; Xie, Allaire, \& Grolemund, 2018), \emph{shiny} (Version 1.4.0.9000; Chang et al., 2019; Chang, 2018; Sievert, 2019), \emph{shinymeta} (Version 0.2.0; Sievert, 2019), \emph{shinythemes} (Version 1.1.2; Chang, 2018), and \emph{tidyr} (Version 1.0.2; Wickham \& Henry, 2020). This document was created using \texttt{papaja} and \texttt{rmarkdown} (Aust \& Barth, 2020; Xie et al., 2018). Documentation for individual packages may include links to additional educational resources, like the \texttt{Tidyverse} cheat sheets from RStudio.
 
-The session info for this project in its current state - containing the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
+The session info for this project in its current state - the R version and additional loaded packages used during the development of this app, as well as the generation of this document - is printed below.
 
 \begin{verbatim}
 ## R version 3.6.3 (2020-02-29)
@@ -307,6 +322,11 @@ The session info for this project in its current state - containing the R versio
 
 \newpage
 
+\hypertarget{screenshots}{%
+\section{Screenshots}\label{screenshots}}
+
+\newpage
+
 \hypertarget{references}{%
 \section{References}\label{references}}
 
@@ -317,6 +337,9 @@ The session info for this project in its current state - containing the R versio
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-R-papaja}{}%
 Aust, F., \& Barth, M. (2020). \emph{papaja: Create APA manuscripts with R Markdown}. Retrieved from \url{https://github.com/crsh/papaja}
+
+\leavevmode\hypertarget{ref-cook-graphs}{}%
+Chang, W. (2013). \emph{R graphics cookbook}. (M. Loukides \& C. Nash, Eds.). O'Reilly Media, Inc.
 
 \leavevmode\hypertarget{ref-R-shinythemes}{}%
 Chang, W. (2018). \emph{Shinythemes: Themes for shiny}. Retrieved from \url{https://CRAN.R-project.org/package=shinythemes}
@@ -374,9 +397,6 @@ Wickham, H., Hester, J., \& Francois, R. (2018). \emph{Readr: Read rectangular t
 
 \leavevmode\hypertarget{ref-R-haven}{}%
 Wickham, H., \& Miller, E. (2019). \emph{Haven: Import and export 'spss', 'stata' and 'sas' files}. Retrieved from \url{https://CRAN.R-project.org/package=haven}
-
-\leavevmode\hypertarget{ref-R-cowplot}{}%
-Wilke, C. O. (2019). \emph{Cowplot: Streamlined plot theme and plot annotations for 'ggplot2'}. Retrieved from \url{https://CRAN.R-project.org/package=cowplot}
 
 \leavevmode\hypertarget{ref-grammar}{}%
 Wilkinson, L. (2005). \emph{The grammar of graphics} (2nd ed.). Springer Scinece \& Business Media.
