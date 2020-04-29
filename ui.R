@@ -191,7 +191,7 @@ shinyUI(navbarPage(title = "tidyTouch",
                  #------------------------------------------------- code section
                  tabPanel(
                  "Code",
-
+                 uiOutput("code")
                  )#close tabPanel for 'Code'
                  
     ) #close navbarPage

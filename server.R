@@ -123,15 +123,15 @@ shinyServer(function(input, output) {
         data.var_type
       }
       else if(input$tr.fun == 'Adjust Variable Type' && input$type.adj_type == "factor"){
-        data.var_type[input$type.adj_var] <- as.factor(data.var_type[input$type.adj_var])
+        data.var_type[[input$type.adj_var]] <- as.factor(data.var_type[[input$type.adj_var]])
         data.var_type
       }
       else if(input$tr.fun == 'Adjust Variable Type' && input$type.adj_type != "numeric"){
-        data.var_type[input$type.adj_var] <- as.numeric(data.var_type[input$type.adj_var])
+        data.var_type[[input$type.adj_var]] <- as.numeric(data.var_type[[input$type.adj_var]])
         data.var_type
       }
       else if(input$tr.fun == 'Adjust Variable Type' && input$type.adj_type != "character"){
-        data.var_type[input$type.adj_var] <- as.character(data.var_type[input$type.adj_var])
+        data.var_type[[input$type.adj_var]] <- as.character(data.var_type[[input$type.adj_var]])
         data.var_type
       }
     })
@@ -147,7 +147,7 @@ shinyServer(function(input, output) {
             ),
             column(width = 4,
                 selectInput("filter.operator", "Operator",
-                            choices = c(">", ">=", "<", "<=") 
+                            choices = c("==", ">", ">=", "<", "<=") 
                 )
             ),
             column(width = 4,
@@ -164,6 +164,9 @@ shinyServer(function(input, output) {
         }
         else if(input$tr.fun != "Filter Rows by Value"){
           data.filter
+        }
+        else if(input$filter.operator == "=="){
+          data.filter <- data.filter %>% filter((!!as.name(input$filter.var))==input$filter.value)
         }
         else if(input$filter.operator == ">"){
           data.filter <- data.filter %>% filter((!!as.name(input$filter.var))>input$filter.value)
@@ -285,8 +288,8 @@ shinyServer(function(input, output) {
 
     #modified data object
     plot.data <- reactive({
-      #group_by_reac()
-      initial.data()
+      group_by_reac()
+      #initial.data()
       })
     
     #data characteristics output
@@ -1129,8 +1132,10 @@ shinyServer(function(input, output) {
     })
     
     geom_fun_str <- reactive({
-      #c(color = color, alpha = alpha, fill = fill, size = size, linetype = linetype, position = position)
-      c(color = color_reac(), alpha = alpha_reac(), fill = fill_reac(), size = size_reac(), linetype = linetype_reac(), position = position_reac())
+      as.list(c(color = color_reac(), alpha = alpha_reac(), fill = fill_reac(), size = size_reac(), linetype = linetype_reac(), position = position_reac()))
+    })
+    geom_fun_list <- reactive({
+      as.list(c())
     })
     
     geom_reac <- reactive({
@@ -1141,74 +1146,68 @@ shinyServer(function(input, output) {
             NULL
           }
           else if(input$geom == "Density"){
-            geom_density(mapping = (geom_fun_str()))
+            do.call(geom_density, geom_fun_str())
           }
           else if(input$geom == "Dotplot"){
-            geom_dotplot(geom_fun_str())
+            do.call(geom_dotplot, geom_fun_str())
           }
           else if(input$geom == "Histogram"){
-            geom_histogram(geom_fun_str())
+            do.call(geom_histogram, geom_fun_str())
           }
           else if(input$geom == "Bar"){
-            geom_bar(geom_fun_str())
+            do.call(geom_bar, geom_fun_str())
           }
           else if(input$geom == "Point"){
-            geom_point(geom_fun_str())
+            do.call(geom_point, geom_fun_str())
           }
           else if(input$geom == "Rug"){
-            geom_rug(geom_fun_str())
+            do.call(geom_rug, geom_fun_str())
           }
           else if(input$geom == "Smooth"){
-            geom_smooth(geom_fun_str())
+            do.call(geom_smooth, geom_fun_str())
           }
           else if(input$geom == "Boxplot"){
-            geom_boxplot(geom_fun_str())
+            do.call(geom_boxplot, geom_fun_str())
           }
           else if(input$geom == "Violin"){
-            geom_violin(geom_fun_str())
+            do.call(geom_violin, geom_fun_str())
           }
           else if(input$geom == "Area"){
-            geom_area(geom_fun_str())
+            do.call(geom_area, geom_fun_str())
           }
           else if(input$geom == "Line"){
-            geom_line(geom_fun_str())
+            do.call(geom_line, geom_fun_str())
           }
           else if(input$geom == "Step"){
-            geom_step(geom_fun_str())
+            do.call(geom_step, geom_fun_str())
           }
       }
       geom_fun(geom_args())
-      #do.call(geom_fun, list(geom_args()))
-      #if(!is.null(geom_args())){
-      #  list(geom_args()) %>% geom_type()
-      #}else{
-      #  geom_type()
-      #}
     })
     
     
     #plot component layering
-    p <- reactive({
+    p <- metaReactive({
       p <- plot.data() %>% 
             ggplot(p_aes_full())# + theme_reac() # + geom_reac()
       #p
       if(!is.null(geom_reac())){
-        pg <- p + geom_reac()
+        pg <- p + ..(geom_reac())
       }else{pg <- p}
       if(!is.null(theme_reac())){
-        pt <- pg + theme_reac()
+        pt <- pg + ..(theme_reac())
       }else{pt <- pg}
       #if(!is.null(font_reac())){
       #  pf <- pt + font_reac()
       #}else{pf <- pt}
       if(!is.null(facet_reac())){
-        pa <- pt + facet_reac()
+        pa <- pt + ..(facet_reac())
       }else{pa <- pt}
       #if(!is.null(coord_reac())){
       #  pc <- pa + coord_reac()
       #}else{pc <- pa}
       if(!is.null(labs_reac())){
-        pl <- pa + labs_reac()
+        pl <- pa + ..(labs_reac())
       }else{pl <- pa}
       pl
     })
@@ -1225,14 +1224,12 @@ shinyServer(function(input, output) {
         p() #+ geom_reac()#+ geom_point() + theme_reac()#labs_reac() #theme_reac() + facet_reac() + #lims_reac
     })
     
-   
-    
     #----------------------------code display
     #check parse/str2expression/str2lang
     #quote() operator
     
     #shinymeta usage
-        #!! - precede reactive value expressions to replace with their values
+        #.. - precede reactive value expressions to replace with their values
         
         #reactive replace    
             #metaReactive()
@@ -1248,6 +1245,11 @@ shinyServer(function(input, output) {
         #outputCodeButton() & displayCodeModal()
         #buildRmdBundle()
     
-    #---------------------------------------------------tables
-   
+    code_formula <- metaReactive({
+      ..(p())
+    })
+    
+    output$code <- renderPrint({
+        expandChain(code_formula())
+    })
 })
