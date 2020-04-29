@@ -11,7 +11,7 @@ affiliation:
     institution   : "East Tennesse State University"
 
 abstract: |
-  Accessibility and usability of software define the programs used for professional and academic activities. While many proprietary tools are easy to use, some challenges exist in using more technical resources, such as the statistical programming language R. The creative project `tidyTouch` is a web application designed to help educate any user in basic R data visualization and transformation using the popular `ggplot2` and `dplyr` packages. Providing point-and-click interactivity to explore potential modifications of graphics for presenting data visually, the app uses an intuitive interface to make R more accessible to those without programming experience. This project is in a state of continual development, and will expand to cover introductory data science topics relevant to academics and professionals alike.
+  Accessibility and usability of software define the programs used for professional and academic activities. While many proprietary tools are easy to use, some challenges exist in using more technical resources, such as the statistical programming language R. The creative project `tidyTouch` is a web application designed to help educate any user in basic R data visualization and transformation using the popular `ggplot2` and `dplyr` packages. Providing point-and-click interactivity to explore potential modifications of graphics for presenting data visually, the app uses an intuitive interface to make R more accessible to those without programming experience. This project is in a state of continual development, and will expand to cover introductory data science topics relevant to academics and professionals alike. The code for `tidyTouch` and this document can be found at [https://github.com/devaneyJE/tidyTouch_thesis](https://github.com/devaneyJE/tidyTouch_thesis).
 
 bibliography      : 
   - ["r-references.bib"]
@@ -143,7 +143,9 @@ sessionInfo()
 ```
 \newpage
 # Screenshots  
-![~/tidyTouch/]
+!["Data Source"](~/tidyTouch/data_source.png)
+\newpage
+!["Plotting"](~/tidyTouch/plot.png)
 
 \newpage
 
